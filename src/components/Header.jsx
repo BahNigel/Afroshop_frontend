@@ -10,7 +10,7 @@ import translations from "../translations";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const { language, setLanguage } = useContext(LanguageContext); // Use LanguageContext
+  const { language, setLanguage } = useContext(LanguageContext);
 
   useEffect(() => {
     dispatch(getUserCheckoutData());
@@ -29,7 +29,6 @@ const Header = () => {
   const contactEmail = aboutUs?.[0]?.email || "info@company.com";
   const contactPhone = aboutUs?.[0]?.phone || "+49 176 57860615";
 
-  // Change Language Handler
   const handleLanguageChange = (event) => {
     setLanguage(event.target.value);
   };
@@ -38,43 +37,35 @@ const Header = () => {
     <>
       {/* Top Navbar */}
       <nav className="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block">
-        <div className="container text-light">
-          <div className="d-flex justify-content-between w-100">
-            {/* Contact Info */}
-            <div>
-              <i className="fa fa-envelope mx-2"></i>
-              <NavLink
-                className="text-light text-decoration-none"
-                to={`mailto:${contactEmail}`}
-              >
-                {contactEmail}
-              </NavLink>
-              <i className="fa fa-phone mx-2"></i>
-              <NavLink
-                className="text-light text-decoration-none"
-                to={`tel:${contactPhone}`}
-              >
-                {contactPhone}
-              </NavLink>
-            </div>
+        <div className="container text-light d-flex justify-content-between">
+          {/* Contact Info */}
+          <div>
+            <i className="fa fa-envelope mx-2"></i>
+            <NavLink className="text-light text-decoration-none" to={`mailto:${contactEmail}`}>
+              {contactEmail}
+            </NavLink>
+            <i className="fa fa-phone mx-2"></i>
+            <NavLink className="text-light text-decoration-none" to={`tel:${contactPhone}`}>
+              {contactPhone}
+            </NavLink>
           </div>
         </div>
       </nav>
 
       {/* Main Header */}
       <nav className="navbar navbar-expand-lg navbar-light shadow sticky-top">
-        <div className="container">
-          <Link className="navbar-brand text-success logo h1" to="/">
+        <div className="container d-flex justify-content-between align-items-center">
+          {/* Shop Name - Responsive Font */}
+          <Link className="navbar-brand text-success logo text-3xl sm:text-2xl md:text-xl lg:text-lg" to="/">
             {shopName}
           </Link>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-          >
+
+          {/* Mobile Toggle Button */}
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
             <span className="navbar-toggler-icon"></span>
           </button>
+
+          {/* Navigation Links */}
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
@@ -103,36 +94,27 @@ const Header = () => {
                 </NavLink>
               </li>
             </ul>
+
+            {/* Right Section - Language, Cart, User */}
             <div className="d-flex align-items-center">
-              {/* Translation Dropdown */}
-              <select
-                className="form-select me-3"
-                value={language}
-                onChange={handleLanguageChange}
-                style={{ width: "120px" }}
-              >
+              {/* Language Selector */}
+              <select className="form-select me-3" value={language} onChange={handleLanguageChange} style={{ width: "120px" }}>
                 <option value="en">English</option>
                 <option value="de">Deutsch</option>
               </select>
 
               {/* Cart Icon */}
-              <Link
-                to="/checkout"
-                className="position-relative text-decoration-none text-dark me-3"
-              >
+              <Link to="/checkout" className="position-relative text-decoration-none text-dark me-3">
                 <FaCartArrowDown size={24} />
                 <span className="position-absolute top-0 start-100 translate-middle badge bg-light text-dark">
                   {cartProductIds.length || 0}
                 </span>
               </Link>
 
-              {/* User Info or Login/Logout */}
+              {/* User Info / Login */}
               {isLogin ? (
                 <>
-                  <Link
-                    to="/profile"
-                    className="me-3 text-decoration-none text-dark d-flex align-items-center"
-                  >
+                  <Link to="/profile" className="me-3 text-decoration-none text-dark d-flex align-items-center">
                     <span>{user?.first_name || "User"}</span>
                     <span className="badge bg-secondary ms-2">{itemNumber}</span>
                   </Link>
