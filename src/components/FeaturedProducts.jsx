@@ -43,7 +43,7 @@ const FeaturedProducts = ({ data }) => {
                 {item.description.substring(0, 80)}...
               </p>
               <div className="d-flex justify-content-between align-items-center mb-3">
-                <span className="fw-bold">${item.price}</span>
+                <span className="fw-bold">€{item.price}</span>
               </div>
               <div className="d-flex justify-content-between mt-auto">
                 <Link

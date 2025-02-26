@@ -163,8 +163,8 @@ const Checkout = () => {
                                 {item.quantity_in_stock !== 0 && (
                                   <h4>
                                     {item.quantity
-                                      ? `${item.quantity} * $${item.cart_bulk ? item.bulk_pirce : item.price} = $${(item.cart_bulk ? item.bulk_pirce : item.price) * item.quantity}`
-                                      : `$${item.cart_bulk ? item.bulk_pirce : item.price}`}
+                                      ? `${item.quantity} * €${item.cart_bulk ? item.bulk_pirce : item.price} = €${(item.cart_bulk ? item.bulk_pirce : item.price) * item.quantity}`
+                                      : `€${item.cart_bulk ? item.bulk_pirce : item.price}`}
                                   </h4>
                                 )}
                               </td>
@@ -203,7 +203,7 @@ const Checkout = () => {
                   </div>
                   <div className="ibox-content">
                     <span>{translations[language].total}</span>
-                    <h2 className="font-bold">${totalPrice.toFixed(2)}</h2>
+                    <h2 className="font-bold">€{totalPrice.toFixed(2)}</h2>
                     <hr />
                     <span className="text-muted small">
                       *{translations[language].statment}

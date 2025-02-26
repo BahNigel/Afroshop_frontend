@@ -114,7 +114,7 @@ const CheckoutProducts = () => {
               <div className="flex-grow-1">
                 <h6 className="mb-0">{cartItem.product.name}</h6>
                 <p className="mb-0 text-muted small">
-                  ${cartItem.bulk ? cartItem.product.bulk_pirce : cartItem.product.price} | {cartItem.quantity} pcs
+                  €{cartItem.bulk ? cartItem.product.bulk_pirce : cartItem.product.price} | {cartItem.quantity} pcs
                 </p>
               </div>
             </div>
@@ -153,8 +153,8 @@ const CheckoutProducts = () => {
   return (
     <PayPalScriptProvider
       options={{
-        "client-id": "AdafjQDYIGrmWh8IcPeStknz4ng3r3Jf_H1C48qhHwmvGVItrvG7rKgIEBAlczYSNObqWA0ULp7T85Et", // Replace with sandbox or live credentials
-        currency: "USD",
+        "client-id": "AVLaW6oUryRQPa_fqFpDODgcuH-QUUUx6kHb_psYGqMIkUqHqaaPaO2a_Z0dByjeh8H7Z5Z0pJPGNU6w",
+        currency: "EUR",
       }}
     >
       <section className="bg-light py-5">
@@ -166,7 +166,7 @@ const CheckoutProducts = () => {
                   <h5 className="mb-0">{translations[language].checkoutId} {checkout.id}</h5>
                   <p className="mb-0 text-muted small">
                   {translations[language].date}: {new Date(checkout.created_at).toLocaleDateString()} | {translations[language].total}:
-                    ${checkout.total_price}
+                    €{checkout.total_price}
                   </p>
                 </div>
                 <div>

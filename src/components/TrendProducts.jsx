@@ -88,7 +88,7 @@ const TrendProducts = ({ data }) => {
                   </div>
 
                   <p style={{ fontSize: "1rem", fontWeight: "bold", color: "#343a40", textAlign: "center" }}>
-                    ${item.price}
+                    €{item.price}
                   </p>
 
                   <div

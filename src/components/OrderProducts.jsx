@@ -63,7 +63,7 @@ const OrderProducts = () => {
                 <div className="flex-grow-1">
                   <h6 className="mb-0">{orderItem.product.name}</h6>
                   <p className="mb-0 text-muted small">
-                  ${orderItem.bulk ? orderItem.product.bulk_pirce : orderItem.product.price} | {orderItem.quantity} pcs
+                  €{orderItem.bulk ? orderItem.product.bulk_pirce : orderItem.product.price} | {orderItem.quantity} pcs
                 </p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ const OrderProducts = () => {
               <div className="card-header d-flex justify-content-between align-items-center">
                 <div>
                   <h5 className="mb-0">{translations[language].orderId}: {order.orderId}</h5>
-                  <p className="mb-0 text-muted small">{translations[language].total}: ${order.total_price}</p>
+                  <p className="mb-0 text-muted small">{translations[language].total}: €{order.total_price}</p>
                 </div>
                 <div>
                   <button

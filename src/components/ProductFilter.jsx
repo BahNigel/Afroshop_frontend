@@ -100,7 +100,11 @@ const ProductFilter = ({ categories, products }) => {
                           to={`/shop/${item.id}`}
                           className="text-decoration-none"
                         >
-                          {item.name}
+                          <div style={{width: '100%', justifyContent: 'space-between'}}>
+                           <p>{item.name}</p> 
+                           <p>€{item.price}</p> 
+                          </div>
+                          
                         </Link>
                       </h5>
                       <p className="card-text">{item.category.name}</p>

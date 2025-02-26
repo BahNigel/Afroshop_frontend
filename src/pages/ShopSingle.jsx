@@ -119,17 +119,17 @@ const ShopSingle = () => {
                         onChange={(e) => setPurchaseType(e.target.value)}
                       >
                         <option value="single">
-                          {translations[language]["buySingle"]} - ${singleProduct.price}
+                          {translations[language]["buySingle"]} - €{singleProduct.price}
                         </option>
                         <option value="bulk">
-                          {translations[language]["buyBulk"]} - ${singleProduct.bulk_pirce}
+                          {translations[language]["buyBulk"]} - €{singleProduct.bulk_pirce}
                         </option>
                       </select>
                     </div>
                   ) : singleProduct?.bulk_pirce ? (
-                    <p className="h3 py-2">{translations[language]["bulkPrice"]}: ${singleProduct.bulk_pirce}</p>
+                    <p className="h3 py-2">{translations[language]["bulkPrice"]}: €{singleProduct.bulk_pirce}</p>
                   ) : (
-                    <p className="h3 py-2">${singleProduct?.price}</p>
+                    <p className="h3 py-2">€{singleProduct?.price}</p>
                   )}
 
                   <ul className="list-inline">
