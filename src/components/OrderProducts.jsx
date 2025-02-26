@@ -96,8 +96,8 @@ const OrderProducts = () => {
   return (
     <PayPalScriptProvider
       options={{
-        "client-id": "AdafjQDYIGrmWh8IcPeStknz4ng3r3Jf_H1C48qhHwmvGVItrvG7rKgIEBAlczYSNObqWA0ULp7T85Et", // Replace with sandbox or live credentials
-        currency: "USD",
+        "client-id": "AVLaW6oUryRQPa_fqFpDODgcuH-QUUUx6kHb_psYGqMIkUqHqaaPaO2a_Z0dByjeh8H7Z5Z0pJPGNU6w",
+        currency: "EUR",
       }}
     >
       <section className="bg-light py-5">
